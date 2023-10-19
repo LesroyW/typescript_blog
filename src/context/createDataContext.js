@@ -7,7 +7,6 @@ export default (reducer, actions, intiialState) => {
     const Provider = ({ children }) => {
         const [state, dispatch] = useReducer(reducer, intiialState);
 
-        // actions === { addBlogPost: (dispatch) => {return () => {} } }
         const boundActions = {};
         for (let key in actions) {
             boundActions[key] = actions[key](dispatch)
